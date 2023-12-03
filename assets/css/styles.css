@@ -3,7 +3,8 @@
 * {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  color: black;
+  color: rgb(116, 116, 116);
+  outline: none;
 }
 
 body {
@@ -72,6 +73,10 @@ aside {
   color: white;
 }
 
+.search-btn:active {
+  border: none;
+}
+
 .preset-item {
   width: 92%;
   margin: 0 4% 2% 4%;
@@ -109,11 +114,15 @@ aside {
   border-radius: 12px;
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
   align-items: center;
-  display: none;
 }
 
 .custum-current-weather-row {
   margin: 0 0 3% 0;
+  color: white;
+}
+
+.custom-forecast-weather-row {
+  margin: 0 0 3% 20px;
   color: white;
 }
 
@@ -168,4 +177,33 @@ aside {
 
 .weather-info-box {
   margin: 1% 0 0 2%;
+}
+
+.weather-info-box-two {
+  margin: 1% 0 0 4%;
+  align-items: center;
+}
+
+.forecast-tile {
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  margin: 1.5%;
+}
+
+#main-display {
+  display: none;
+}
+
+#loading-display {
+  display: none;
+}
+
+#splash-display {
+  text-align: center;
+}
+
+.splash-label {
+  margin: 20%;
+  font-size: 3em;
 }

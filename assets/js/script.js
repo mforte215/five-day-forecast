@@ -2,14 +2,20 @@ const PRESELECTED_CITIES = ["Philadelphia", "Chicago", "Washington DC", "Los Ang
 
 const searchForm = document.querySelector('.search-form');
 const mainDisplay = document.getElementById("main-display");
+const splashDisplay = document.getElementById("splash-display");
+
 const onLoadCityData = async (cityName) => {
+    splashDisplay.style.display = "block";
+    document.querySelector(".splash-label").textContent = "LOADING...";
     mainDisplay.style.display = "none";
+
     let newCorridnates = null;
     let foundCityWeatherData = {
         mainCurrentWeather: '',
         mainCurrentTemp: '',
         mainCurrentMinTemp: '',
         mainCurrentMaxTemp: '',
+        mainCurrentFeelsLike: '',
         mainCurrentWind: '',
         mainCurrentHumidity: '',
         fiveDayForecast: [{
@@ -51,7 +57,8 @@ const onLoadCityData = async (cityName) => {
                 lon: foundLon,
             }
             console.log("LOGGING IN FIND BY NAME");
-            console.log(newCorridnates);
+            console.log(response[0]);
+            let cityStateName = cityName + ", " + response[0].state;
             //get the current weather
             fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + newCorridnates.lat + '&lon=' + newCorridnates.lon + '&units=imperial&appid=' + API_KEY.id).then(response => response.json())
                 .then(response => {
@@ -64,10 +71,19 @@ const onLoadCityData = async (cityName) => {
                     foundCityWeatherData.mainCurrentMaxTemp = response.main.temp_max;
                     foundCityWeatherData.mainCurrentWind = response.wind.speed;
                     foundCityWeatherData.mainCurrentHumidity = response.main.humidity;
+                    foundCityWeatherData.mainCurrentFeelsLike = response.main.feels_like;
 
                     document.querySelector('#current-temp-lbl').textContent = "Temp: " + foundCityWeatherData.mainCurrentTemp + "\u00B0F"
+
                     document.querySelector('#current-wind-lbl').textContent = "Wind: " + foundCityWeatherData.mainCurrentWind + "MPH"
+
                     document.querySelector('#current-humidity-lbl').textContent = "Humidity: " + foundCityWeatherData.mainCurrentHumidity + "%";
+
+                    document.querySelector('#current-minTemp-lbl').textContent = "Min Temp: " + foundCityWeatherData.mainCurrentMinTemp + "\u00B0F";
+
+                    document.querySelector('#current-maxTemp-lbl').textContent = "Min Temp: " + foundCityWeatherData.mainCurrentMaxTemp + "\u00B0F";
+
+                    document.querySelector('#current-feelslike-lbl').textContent = "Feels Like: " + foundCityWeatherData.mainCurrentFeelsLike + "\u00B0F";
 
                     console.log(response);
                     document.querySelector(".main-current-weather-label").textContent = mainCurrentWeather;
@@ -76,13 +92,15 @@ const onLoadCityData = async (cityName) => {
                         .then(response => {
                             console.log("Logging 5 day forecast for " + cityName);
                             console.log(response);
-
+                            //set the 5 day forecast data
+                            //Date/Time Index Values
+                            let forecastData = response.list;
 
                             //set the found weather day and city name into the page.
                             let cityNameHeader = document.querySelector('.current-weather-city-header');
-                            cityNameHeader.textContent = cityName;
+                            cityNameHeader.textContent = cityStateName;
 
-
+                            splashDisplay.style.display = "none";
                             mainDisplay.style.display = "unset";
 
                         })
