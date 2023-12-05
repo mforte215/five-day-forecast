@@ -1,4 +1,4 @@
-# five-day-forecast ⛈️
+# FIVE DAY FORECAST ⛈️
 
 A weather dashboard capable of showing you any city's weather in the world! The dashboard shows the current weather conditions given by city along with a five day forecast for the location. Included in the data is the min and max temps for the day. The humidity and wind speed. Along with the general overall conditions of the weather for the given time period.
 
