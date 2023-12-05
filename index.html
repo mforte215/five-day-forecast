@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="./assets/images/weather_icon.png">
 </head>
 
 <body>
@@ -22,6 +23,9 @@
                     <input type="text" name="city-name" id="city-name" class="city-input" />
                     <button type="submit" class="search-btn">Search</button>
                 </form>
+                <ul id="preset-container" class="preset-container">
+
+                </ul>
             </div>
             <div id="main-display" class="col-12 col-md-9 col-lg-8 offset-lg-1 custom-main-container">
                 <div class="row custum-current-weather-row">
@@ -33,8 +37,7 @@
                                 <div class="row">
                                     <div class="col-11 custom-current-weather-display-left">
                                         <div class="weather-display-box">
-                                            <img id="main-icon-image" src="./assets/images/cloudy.png"
-                                                alt="image of cloudy sky" />
+                                            <img id="main-icon-image" src="" alt="image of cloudy sky" />
                                             <label class="main-current-weather-label"></label>
                                         </div>
                                         <div class="weather-info-box">
@@ -64,8 +67,8 @@
                             <div class="custom-current-weather-display">
                                 <h2>Five Day Forecast</h2>
                                 <div class="row">
-                                    <div class="col-11 custom-current-weather-display-left">
-                                        <div class="col-2 forecast-tile">
+                                    <div class="col-11 custom-current-weather-display-left  flex-wrap">
+                                        <div class="col-10 col-md-5 col-lg-2 forecast-tile">
                                             <img src="" id="day-0-forecast-image" alt="cloudy image" />
                                             <p id="day-0-forecast-date" class="forecast-date-label">Monday</p>
                                             <p id="day-0-forecast-main" class="forecast-date-label">Weather</p>
@@ -74,8 +77,8 @@
                                             <p id="day-0-forecast-humidity" class="forecast-humidity-label">Humidity:
                                             </p>
                                         </div>
-                                        <div class="col-2 forecast-tile"> <img src="" alt="cloudy image"
-                                                id="day-1-forecast-image" />
+                                        <div class="col-10 col-md-5 col-lg-2 forecast-tile"> <img src=""
+                                                alt="cloudy image" id="day-1-forecast-image" />
                                             <p id="day-1-forecast-date" class="forecast-date-label">Monday</p>
                                             <p id="day-1-forecast-main" class="forecast-date-label">Weather</p>
                                             <p id="day-1-forecast-temp" class="forecast-temp-label">Temp:</p>
@@ -83,8 +86,8 @@
                                             <p id="day-1-forecast-humidity" class="forecast-humidity-label">Humidity:
                                             </p>
                                         </div>
-                                        <div class="col-2 forecast-tile"> <img src="" alt="cloudy image"
-                                                id="day-2-forecast-image" />
+                                        <div class="col-10 col-md-5 col-lg-2 forecast-tile"> <img src=""
+                                                alt="cloudy image" id="day-2-forecast-image" />
                                             <p id="day-2-forecast-date" class="forecast-date-label">Monday</p>
                                             <p id="day-2-forecast-main" class="forecast-date-label">Weather</p>
                                             <p id="day-2-forecast-temp" class="forecast-temp-label">Temp:</p>
@@ -92,8 +95,8 @@
                                             <p id="day-2-forecast-humidity" class="forecast-humidity-label">Humidity:
                                             </p>
                                         </div>
-                                        <div class="col-2 forecast-tile"> <img src="" alt="cloudy image"
-                                                id="day-3-forecast-image" />
+                                        <div class="col-10 col-md-5 col-lg-2 forecast-tile"> <img src=""
+                                                alt="cloudy image" id="day-3-forecast-image" />
                                             <p id="day-3-forecast-date" class="forecast-date-label">Monday</p>
                                             <p id="day-3-forecast-main" class="forecast-date-label">Weather</p>
                                             <p id="day-3-forecast-temp" class="forecast-temp-label">Temp:</p>
@@ -101,8 +104,8 @@
                                             <p id="day-3-forecast-humidity" class="forecast-humidity-label">Humidity:
                                             </p>
                                         </div>
-                                        <div class="col-2 forecast-tile"> <img src="" alt="cloudy image"
-                                                id="day-4-forecast-image" />
+                                        <div class="col-10 col-md-5 col-lg-2 forecast-tile"> <img src=""
+                                                alt="cloudy image" id="day-4-forecast-image" />
                                             <p id="day-4-forecast-date" class="forecast-date-label">Monday</p>
                                             <p id="day-4-forecast-main" class="forecast-date-label">Weather</p>
                                             <p id="day-4-forecast-temp" class="forecast-temp-label">Temp:</p>
