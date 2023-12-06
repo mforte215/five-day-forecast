@@ -197,7 +197,7 @@ const setInitialData = () => {
 
 
 
-
+//Implementation for adding a pre defined array of city names as pre set buttons on the left side bar
 /* const createPresetButtons = () => {
     //find the correct place to put them
     let newContainer = document.createElement("ul");
